@@ -16,7 +16,7 @@
                 <h1>Arquivo</h1>
                 <p>
                     <label for="title">Título da promoção</label>
-                    <input type="text" id="title" />
+                    <input type="text" id="title" value="Titulo" />
                 </p>
                 <p>
                     <label for="dtIni">Início da promoção</label>
@@ -30,11 +30,36 @@
                 <h1>Dados</h1>
                 <p>
                     <label for="xlsFile">Selecionar arquivo Excel</label>
-                    <input type="file" id="xlsFile"/>
-                    <label for="xlsFile" id="xlsLabel" class="inputFile">&nbsp;</label>
+                    <input
+                        type="file"
+                        id="xlsFile"
+                        accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                    />
+                    <label
+                        for="xlsFile"
+                        id="xlsLabel"
+                        class="inputFile"
+                    >
+                        &nbsp;
+                    </label>
                 </p>
 
                 <h1>Cabeçalho e rodapé</h1>
+                <p>
+                    <label for="titleImg">Imagem de título</label>
+                    <input
+                        type="file"
+                        id="titleImg"
+                        accept="image/*"
+                    />
+                    <label
+                        for="titleImg"
+                        id="titleLabel"
+                        class="inputFile"
+                    >
+                        &nbsp;
+                    </label>
+                </p>
                 <p>
                     <label for="headerColor">Cor do Cabeçalho/Rodapé</label>
                     <input type="color" id="headerColor" value="#0095D1"/>
