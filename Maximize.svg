@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 700" width="700" height="700">
+	<defs>
+		<image width="742" height="742" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAuYAAALmAQMAAAA0V8MQAAAAAXNSR0IB2cksfwAAAAZQTFRFAAAAYnKkIobaBAAAAAJ0Uk5TAP9bkSK1AAABEklEQVR4nO3MMQ4AEBAAwet8288ptCQiFCez5RYTIUmS0lTamyqdTqfT6XQ6nU6n0+l0Op1Op9PpdDqdTqfT6XQ6nU6n7+hjnTah6HQ6nU6n0+l0Op1Op9PpdDqdTqfT6XQ6nU6n0+l0Op1Op9PpdDqdTqfT6XQ6nU6n0+l0Op1Op9PpdDqdTqfT6XQ6nU6n0+l0Op1Op9PpdDqdTqfT6XQ6nU6n0+l0Op1Op9PpdDqdTqfT6XQ6nU6n0+l0Op1Op9PpdDqdTqfT6XQ6nU6n0+l0Op1Op9PpdDqdTqfT6XQ6nU6n0+l0Op3+tX4xOp1Op9PpdDqdTqfT6XQ6nU6n0+l0Op1Op9PpdDqdTl/pkiQpRR3mAeTFKyNDZQAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<use id="Forma 7" href="#img1" x="-21" y="-21" />
+</svg>

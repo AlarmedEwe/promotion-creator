@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 156" width="680" height="156">
+	<defs>
+		<image width="684" height="158" id="img1" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqwAAACeAgMAAACKgbAsAAAAAXNSR0IB2cksfwAAAAxQTFRFAAAAX26gYXGjYnKkxe0YdgAAAAR0Uk5TADOy/25PHuQAAADISURBVHic7d0xEYBAEMDAa6gwR4N/nPAqUtzMroI4yMwi17vFM/e/xac1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1obWhtaG1sat10yNokQNxtkiTXxfmbAAAAABJRU5ErkJggg=="/>
+	</defs>
+	<style>
+		tspan { white-space:pre }
+	</style>
+	<use id="Forma 3" href="#img1" x="-2" y="-1" />
+</svg>
