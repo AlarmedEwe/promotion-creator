@@ -1,0 +1,28 @@
+input {
+    &[type=file]
+    {
+        display: none;
+    }
+    &[type=color] {
+        display: block;
+        width: 100%;    
+        border: none;
+        background-color: var(--light-grey);
+        color: var(--white);
+        padding: 2px 5px;
+        border-radius: var(--input-bradius);
+    }
+}
+input[type=text],
+input[type=number],
+input[type=date],
+select,
+.inputFile,
+.inputColor {
+    border: none;
+    background-color: var(--light-grey);
+    color: var(--white);
+    padding: var(--input-padding);
+    border-radius: var(--input-bradius);
+}
+.inputColor  { display: none }

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main>
+        <div id="preview">
+
+        </div>
+        <div id="config">
+            <form>
+                <h1>Arquivo</h1>
+                <p>
+                    <label for="title">Título da promoção</label>
+                    <input type="text" id="title" />
+                </p>
+                <p>
+                    <label for="dtIni">Início da promoção</label>
+                    <input type="date" id="dtIni" />
+                </p>
+                <p>
+                    <label for="dtFin">Fim da promoção</label>
+                    <input type="date" id="dtFin" />
+                </p>
+
+                <h1>Dados</h1>
+                <p>
+                    <label for="xlsFile">Selecionar arquivo Excel</label>
+                    <input type="file" id="xlsFile"/>
+                    <label for="xlsFile" id="xlsLabel" class="inputFile">&nbsp;</label>
+                </p>
+
+                <h1>Cabeçalho e rodapé</h1>
+                <p>
+                    <label for="headerColor">Cor do Cabeçalho/Rodapé</label>
+                    <input type="color" id="headerColor" value="#0095D1"/>
+                    <label for="headerColor" class="inputColor">&nbsp;</label>
+                </p>
+                <h2>Borda do Cabeçalho</h2>
+                <p>
+                    <label for="headerBorderColor">Cor</label>
+                    <input type="color" id="headerBorderColor" value="#165991"/>
+                    <label for="headerBorderColor" class="inputColor">&nbsp;</label>
+                </p>
+                <p>
+                    <label for="headerBorderWeight">Grossura</label>
+                    <input type="number" id="headerBorderWeight"/>
+                </p>
+                <p>
+                    <label for="headerBorderStyle">Estilo</label>
+                    <select id="headerBorderStyle">
+                        <option value="hidden">Nenhuma borda</option>
+                        <option value="solid" selected>Sólida</option>
+                        <option value="dotted">Pontilhada</option>
+                        <option value="dashed">Linha de corte</option>
+                        <option value="double">Dobrada</option>
+                        <option value="groove">Fosca</option>
+                        <option value="ridge">Moldura</option>
+                    </select>
+                </p>
+
+                <h1>Design geral</h1>
+                <p>
+                    <label for="colNumber">Nº de colunas</label>
+                    <input type="number" id="colNumber" value="4" />
+                </p>
+                <p>
+                    <label for="tagImg">Imagem da etiqueta de preço</label>
+                    <input type="file" id="tagImg" />
+                    <label for="tagImg" class="inputFile">&nbsp;</label>
+                </p>
+            </form>
+        </div>
+    </main>
+
+    <script src="../frame.js"></script>
+    <script src="fileHandle.js"></script>
+</body>
+</html>

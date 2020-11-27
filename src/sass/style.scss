@@ -1,0 +1,5 @@
+@import 'reset';        // * and :root
+@import 'main';         // body and main
+@import 'containers';   // #preview and #config
+@import 'form';         // form { h1, h2 and p }
+@import 'inputs';       // inputs, select, .inputFile and .inputColor

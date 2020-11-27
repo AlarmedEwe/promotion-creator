@@ -1,0 +1,82 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --dark-grey: #4A4C4E;
+  --light-grey: #777;
+  --white: #EEE;
+  --font-family: Arial, sans-serif;
+  --input-padding:5px 10px;
+  --input-bradius:4px;
+}
+
+body {
+  height: 100vh;
+  font-family: var(--font-family);
+  overflow: hidden;
+}
+
+main {
+  height: calc(100% - 37px);
+  display: grid;
+  grid-template-columns: 60% 40%;
+  margin-top: 37px;
+}
+
+#preview {
+  background-color: red;
+}
+
+#config {
+  background-color: var(--dark-grey);
+  color: var(--white);
+  padding: 10px 20px;
+  overflow: auto;
+}
+
+form h1 {
+  margin-top: 10px;
+}
+form h1, form h2 {
+  margin-bottom: 5px;
+}
+form p {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  margin-bottom: 5px;
+}
+
+input[type=file] {
+  display: none;
+}
+input[type=color] {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: var(--light-grey);
+  color: var(--white);
+  padding: 2px 5px;
+  border-radius: var(--input-bradius);
+}
+
+input[type=text],
+input[type=number],
+input[type=date],
+select,
+.inputFile,
+.inputColor {
+  border: none;
+  background-color: var(--light-grey);
+  color: var(--white);
+  padding: var(--input-padding);
+  border-radius: var(--input-bradius);
+}
+
+.inputColor {
+  display: none;
+}
+
+/*# sourceMappingURL=style.css.map */

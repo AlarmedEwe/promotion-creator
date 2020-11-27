@@ -1,0 +1,12 @@
+body {
+    height: 100vh;
+    font-family: var(--font-family);
+    overflow: hidden;
+}
+
+main {
+    height: calc(100% - 37px);
+    display: grid;
+    grid-template-columns: 60% 40%;
+    margin-top: 37px;
+}
