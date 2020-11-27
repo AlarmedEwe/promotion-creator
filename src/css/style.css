@@ -5,8 +5,8 @@
 }
 
 :root {
-  --dark-grey: #4A4C4E;
-  --light-grey: #777;
+  --dark-gray: #4A4C4E;
+  --light-gray: #777;
   --white: #EEE;
   --font-family: Arial, sans-serif;
   --input-padding:5px 10px;
@@ -56,7 +56,7 @@ input[type=color] {
   display: block;
   width: 100%;
   border: none;
-  background-color: var(--light-grey);
+  background-color: var(--light-gray);
   color: var(--white);
   padding: 2px 5px;
   border-radius: var(--input-bradius);
@@ -69,7 +69,7 @@ select,
 .inputFile,
 .inputColor {
   border: none;
-  background-color: var(--light-grey);
+  background-color: var(--light-gray);
   color: var(--white);
   padding: var(--input-padding);
   border-radius: var(--input-bradius);
@@ -77,6 +77,18 @@ select,
 
 .inputColor {
   display: none;
+}
+
+#preview h1 {
+  background-color: var(--dark-gray);
+  color: var(--white);
+}
+
+iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  background: var(--white);
 }
 
 /*# sourceMappingURL=style.css.map */
