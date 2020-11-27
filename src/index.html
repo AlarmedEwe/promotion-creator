@@ -9,10 +9,12 @@
 <body>
     <main>
         <div id="preview">
-
+            <iframe id="flyer" src="flyer.html">
+                
+            </iframe>
         </div>
         <div id="config">
-            <form>
+            <form onsubmit="return false;">
                 <h1>Arquivo</h1>
                 <p>
                     <label for="title">Título da promoção</label>
@@ -73,7 +75,7 @@
                 </p>
                 <p>
                     <label for="headerBorderWeight">Grossura</label>
-                    <input type="number" id="headerBorderWeight"/>
+                    <input type="number" id="headerBorderWeight" value="2"/>
                 </p>
                 <p>
                     <label for="headerBorderStyle">Estilo</label>
@@ -98,11 +100,15 @@
                     <input type="file" id="tagImg" />
                     <label for="tagImg" class="inputFile">&nbsp;</label>
                 </p>
+                <p>
+                    <button id="send">Gerar promoção</button>
+                </p>
             </form>
         </div>
     </main>
 
     <script src="../frame.js"></script>
     <script src="fileHandle.js"></script>
+    <script src="backend/XlsxHandle.js"></script>
 </body>
 </html>
