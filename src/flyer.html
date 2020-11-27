@@ -5,37 +5,49 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Titulo</title>
     <style>
+        :root {
+            --primary-color: #0095D1;
+            --secundary-color: #165991;
+            --header-border-weight: 5px;
+            --header-border-style: solid;
+            --footer-border-weight: 0px;
+            --footer-border-weight: solid;
+        }
     </style>
     <link rel="stylesheet" href="css/flyer.css">
 </head>
 <body>
     <main>    
-        <div
-            id="flyerHeader"
-            style=" background-color: #0095D1;
-                    border-bottom: 2px solid #165991;
-                    margin-bottom: 1.5rem;
-            ">
+        <div id="flyerHeader" >
             <h1>Titulo</h1>
+            <h2>Visite nosso portal: portal.gramense.com.br</h2>
         </div>
         <div id="flyerMain">
-            <div 
-                id="flyerAlert"
-                style=" writing-mode: vertical-rl;
-                        font-family: Arial, Helvetica, sans-serif;
-                        font-size: 1rem;
-                        font-weight: bold;
-            ">
+            <div id="flyerAlert">
                 <p>IMAGENS DE CARÁTER ILUSTRATIVO. RESERVAMOS O DIREITO DE CORRIGIR EVENTUAIS ERROS GRÁFICOS.</p>
             </div>
-            <div id="flyerList"></div>
+            <div id="flyerList">
+                
+            </div>
         </div>
-        <div
-            id="flyerFooter"
-            style=" background-color: #0095D1;
-        ">
+        <div id="flyerFooter">
             <p>VALIDADE 26 E 27 DE NOVEMBRO DE 2020 OU ENQUANTO DURAR O ESTOQUE.</p>
         </div>
     </main>
+    <script>
+        'use strict';
+        let list = [{"A":"DESCRICAO","B":"PRECO","C":"IMG"},{"A":"ABS O.B. SUPER","B":6.55,"C":"P:\\IMG_PROD\\14559.jpg"},{"A":"DIVERSOS","B":12.68,"C":"P:\\IMG_PROD\\2.jpg"},{"A":"DR NIVEA FEM DRY COMFORT","B":6.99,"C":"P:\\IMG_PROD\\46973.jpg"},{"A":"HENE PELUCIA FORTE","B":5.79,"C":"P:\\IMG_PROD\\47821.jpg"},{"A":"TINT MAXTON KIT PRATIC 206 LAVANDA","B":7.69,"C":"P:\\IMG_PROD\\315907.jpg"},{"A":"CR NIVEA SOFT POTE","B":26.6,"C":"P:\\IMG_PROD\\50725.jpg"},{"A":"CR TRIM MODELADOR CABELO","B":14.5,"C":"P:\\IMG_PROD\\51748.jpg"},{"A":"DA ABOVE ELEMENTS OCEAN ACO","B":4.69,"C":"P:\\IMG_PROD\\315973.jpg"},{"A":"PALITO P/UNHAS MERHEJE BASIC","B":1.29,"C":"P:\\IMG_PROD\\61298.jpg"},{"A":"DEPI-ROLL FOLHAS PRONTAS CORPORAL MEL","B":19.55,"C":"P:\\IMG_PROD\\53341.jpg"},{"A":"DA ABOVE ELEMENTS VULCAN ACO","B":4.69,"C":"P:\\IMG_PROD\\315975.jpg"},{"A":"SH ABOVE A SECO FRESH","B":8.1,"C":"P:\\IMG_PROD\\315977.jpg"},{"A":"ENX BUC PLAX ICE FUSION","B":10.99,"C":"P:\\IMG_PROD\\316868.jpg"},{"A":"SAB LIQ INF J&J CABECA/PES","B":13.95,"C":"P:\\IMG_PROD\\32328.jpg"},{"A":"TINT MAXTON KIT PRATIC 403 PESSEGO","B":7.69,"C":"P:\\IMG_PROD\\315906.jpg"},{"A":"DA ABOVE SPORT ENERGY WOMEN","B":4.69,"C":"P:\\IMG_PROD\\315968.jpg"},{"A":"ESP BARB ABOVE POCKET","B":5.771772,"C":"P:\\IMG_PROD\\315969.jpg"},{"A":"DA ABOVE ELEMENTS HURRICANE","B":4.69,"C":"P:\\IMG_PROD\\315972.jpg"},{"A":"ED KESS 10K PRO EXTRA MACIA - 2107","B":8.25,"C":"P:\\IMG_PROD\\316405.jpg"}];
+        list.shift();
+        for (let product of list)
+        {
+            let div = document.createElement('div');
+            div.innerHTML = `<img src="${product.C}" alt="${product.A}"/>
+                <div>
+                    <p>${product.A}</p>
+                    <div class="price">R$ ${product.B}</div>
+                </div>`;
+            flyerList.appendChild(div);
+        }
+    </script>
 </body>
 </html>

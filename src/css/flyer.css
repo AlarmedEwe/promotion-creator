@@ -15,6 +15,59 @@ main {
     margin: 0 auto;
 }
 
+#flyerHeader,
+#flyerFooter {
+    background-color: var(--primary-color);
+    display: flex;
+}
+
+#flyerHeader {
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 5px solid var(--secundary-color);
+    height: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+#flyerHeader h1 {
+    max-width: 50%;
+}
+
+#flyerFooter {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.5rem;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+}
+
 #flyerMain {
-    height: calc(100% - 100px);
+    display: flex;
+    height: calc(100% - 150px);
+}
+
+#flyerAlert {
+    writing-mode: vertical-rl;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    height: 100%;
+    text-align: center;
+}
+
+#flyerList {
+    display: grid;
+    padding: 1.5rem 10px;
+    width: calc(100%);
+    grid-template-columns: auto auto auto auto auto;
+}
+#flyerList div {
+    display: grid;
+    grid-template-columns: 40% 50%;
+}
+#flyerList div div {
+    display: block;
+}
+#flyerList img {
+    max-width: 100%;
 }

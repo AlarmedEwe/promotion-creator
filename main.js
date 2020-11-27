@@ -12,7 +12,7 @@ function createWindow() {
         }
     });
     
-    // window.webContents.openDevTools();
+    window.webContents.openDevTools();
     window.removeMenu();
     window.loadFile('src/index.html');
 }

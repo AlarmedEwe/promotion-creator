@@ -1,14 +1,13 @@
-#preview, #config {
-    overflow: auto;
-}
-
 #preview {
     position: relative;
     background-color: red;
+    padding: 0 0 -5px;
+    overflow: hidden;
 }
 
 #config {
     background-color: var(--dark-gray);
     color: var(--white);
     padding: 10px 20px;
+    overflow: auto;
 }
