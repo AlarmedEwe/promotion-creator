@@ -9,7 +9,7 @@ for (let product of list)
     div.innerHTML = `<img src="${product.C}" alt="${product.A}"/>
         <div>
             <p>${product.A.toLowerCase()}</p>
-            <div class="price">R$ ${product.B}</div>
+            <div class="price">R$ ${product.B.toFixed(2).replace('.',',')}</div>
         </div>`;
     flyerList.appendChild(div);
 }
