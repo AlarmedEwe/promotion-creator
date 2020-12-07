@@ -7,5 +7,6 @@ send.onclick = () => {
         sourceFile: xlsFile.files[0].path
     });
 
-    console.log(JSON.stringify(result.Plan1));
+    console.log(result);
+    console.log(JSON.stringify(result[Object.keys(result)[0]]));
 };
