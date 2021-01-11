@@ -1,7 +1,18 @@
 'use strict';
 
-setTimeout(() => {
-    load.style.display = 'none';
+let winLoad = false,
+    iLoad   = false;
+
+// window.onload   = () => { winLoad = true; }
+// flyer.contentDocument.addEventListener('DOMContentLoaded', () => {
+//     iLoad = true;
+// });
+
+let loader = setInterval(() => {
+    // if(winLoad && iLoad){
+        load.style.display = 'none';
+        clearInterval(loader);
+    // }
 }, 1500);
 
 xlsFile.onchange = function ()
