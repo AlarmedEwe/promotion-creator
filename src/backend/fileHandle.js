@@ -10,7 +10,7 @@ setTimeout(() => {
     flyer.contentDocument.querySelector('#flyerFooter p').innerHTML =
         `VALIDADE ${now.getDate()} A ${now.getDate() + 2} `+
         `DE ${months[now.getMonth()]} DE ${now.getFullYear()} OU ENQUANTO DURAR O ESTOQUE.`;
-}, 1400);
+}, 1500);
 
 // window.onload   = () => { winLoad = true; }
 // flyer.contentDocument.addEventListener('DOMContentLoaded', () => {
@@ -22,14 +22,9 @@ let loader = setInterval(() => {
         load.style.display = 'none';
         clearInterval(loader);
     // }
-}, 1500);
+}, 2000);
 
-xlsFile.onchange = function ()
+function handleFileName (that)
 {
-    xlsLabel.innerHTML = this.files[0].name;
-}
-
-titleImg.onchange = function ()
-{
-    titleLabel.innerHTML = this.files[0].name;
+    document.querySelectorAll(`[for=${that.id}]`)[1].innerHTML = that.files[0].name;
 }
