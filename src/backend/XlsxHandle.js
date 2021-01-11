@@ -1,5 +1,6 @@
 'use strict';
 const excelToJson = require('convert-excel-to-json');
+const { jsPDF } = require('jspdf');
 
 var flyerContent;
 setTimeout(() => { flyerContent = flyer.contentDocument; }, 1500);
@@ -17,13 +18,30 @@ function createFlyer(list)
     for (let product of list)
     {
         let div = document.createElement('div');
-        div.innerHTML = `<img src="${product.C}" alt="${product.A}"/>
+        div.innerHTML = `<img src="${product.D}" alt="${product.A}"/>
             <div>
-                <p>${product.A.toLowerCase()}</p>
-                <div class="price">R$ ${product.B.toFixed(2).replace('.',',')}</div>
+                <p>${product.A.toLowerCase()} ${product.B}</p>
+                <div class="price">R$ ${product.C.toFixed(2).replace('.',',')}</div>
             </div>`;
         flyerList.appendChild(div);
     }
+}
+
+function printPage()
+{
+    flyer.contentWindow.print();
+}
+
+function savePage()
+{
+    let doc = new jsPDF();
+    doc.html(flyerContent.body, {
+        margin: 10,
+        filename: 'Flyer',
+        callback: doc => {
+            doc.save();
+        }
+    });
 }
 
 // On Changes
