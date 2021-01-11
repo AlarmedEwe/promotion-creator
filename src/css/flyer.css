@@ -4,6 +4,21 @@
     box-sizing: border-box;
 }
 
+:root {
+    --product-font:     Arial;
+    --price-tag-font:   Arial;
+
+    --primary-color:    #0095D1;
+    --secundary-color:  #165991;
+    --price-tag-color:  #333333;
+    --text-color:       #333333;
+
+    --header-border-weight: 5px;
+    --header-border-style:  solid;
+    --footer-border-weight: 0px;
+    --footer-border-style: solid;
+}
+
 body {
     background-color: #777;
 }
@@ -24,10 +39,11 @@ main {
 #flyerHeader {
     justify-content: space-between;
     align-items: center;
-    border-bottom: 5px solid var(--secundary-color);
+    border-bottom: var(--header-border-weight) var(--header-border-style) var(--secundary-color);
     height: 100px;
     padding-left: 10px;
     padding-right: 10px;
+    color: var(--text-color);
 }
 #flyerHeader h1 {
     max-width: 50%;
@@ -37,11 +53,13 @@ main {
 }
 
 #flyerFooter {
+    border-top: var(--footer-border-weight) var(--footer-border-style) var(--secundary-color);
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1.2rem;
     height: 50px;
     align-items: center;
     justify-content: center;
+    color: var(--text-color);
 }
 
 #flyerMain {

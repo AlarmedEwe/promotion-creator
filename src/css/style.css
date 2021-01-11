@@ -82,6 +82,10 @@ select,
   display: none;
 }
 
+.inputFile {
+  font-size: 0.75em;
+}
+
 #preview h1 {
   background-color: var(--light-gray);
   color: var(--white);
