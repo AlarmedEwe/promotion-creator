@@ -1,8 +1,8 @@
-@import 'reset';        // * and :root
-@import 'main';         // body and main
-@import 'containers';   // #preview and #config
-@import 'form';         // form { h1, h2 and p }
-@import 'inputs';       // inputs, select, .inputFile and .inputColor
-@import 'iframe';
-@import 'load';
-@import 'menu';
+@import 'app/reset';        // * and :root
+@import 'app/main';         // body and main
+@import 'app/containers';   // #preview and #config
+@import 'app/form';         // form { h1, h2 and p }
+@import 'app/inputs';       // inputs, select, .inputFile and .inputColor
+@import 'app/iframe';
+@import 'app/load';
+@import 'app/menu';

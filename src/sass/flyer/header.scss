@@ -1,0 +1,32 @@
+#flyerHeader,
+#flyerFooter {
+    background: var(--primary-color);
+    display: flex;
+}
+
+#flyerHeader {
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: var(--header-border-weight) var(--header-border-style) var(--secundary-color);
+    height: 100px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: var(--text-color);
+
+    h1 {
+        max-width: 50%;
+    }
+    h2 {
+        text-align: right;
+    }
+}
+
+#flyerFooter {
+    border-top: var(--footer-border-weight) var(--footer-border-style) var(--secundary-color);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 1.2rem;
+    height: 50px;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+}

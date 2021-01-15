@@ -1,0 +1,39 @@
+#flyerList {
+    display: grid;
+    padding: 1.5rem 10px;
+    width: calc(100%);
+    grid-template-columns: auto auto auto auto auto;
+
+    div {
+        display: grid;
+        grid-template-columns: 40% 50%;
+
+        div {
+            display: block;
+        }
+    }
+    
+    img {
+        max-width: 100%;
+        max-height: calc((297mm - 150px) / 12);
+    }
+
+    p {
+        font-family: var(--product-font);
+        font-weight: bold;
+        font-size: 8pt;
+        text-transform: capitalize;
+    }
+    
+    .price {
+        font-size: 13pt;
+        font-weight: bold;
+        color: var(--price-tag-color);
+        font-family: var(--price-tag-font);
+    
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+}
