@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fontawesome/css/all.min.css">
 </head>
 <body>
     <div id="load">Carregando...</div>
@@ -16,9 +17,9 @@
             </iframe>
         </div>
         <div id="config">
-            <div>
-                <button onclick="printPage();">Imprimir</button>
-                <button onclick="savePage();">Salvar</button>
+            <div id="menu">
+                <button onclick="printPage();"><i class="fa fa-fw fa-print"></i> Imprimir</button>
+                <button onclick="savePage();"><i class="fa fa-fw fa-save"></i> Salvar</button>
             </div>
 
             <form onsubmit="return false;">

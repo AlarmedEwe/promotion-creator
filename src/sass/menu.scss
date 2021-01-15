@@ -1,0 +1,18 @@
+#menu {
+    text-align: right;
+    
+    button {
+        padding: var(--input-padding);
+        background-color: var(--dark-gray);
+        color: var(--white);
+        border: 2px solid var(--white);
+        border-radius: var(--input-bradius);
+        cursor: pointer;
+
+        &:hover, &:active, &:focus {
+            background-color: var(--light-gray);
+            color: var(--dark-gray);
+            border: 2px solid var(--light-gray);
+        }
+    }
+}
