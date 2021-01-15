@@ -1,7 +1,7 @@
 {
   "name": "promotion-creator",
-  "version": "1.0.0",
-  "description": "Promotion Creator",
+  "version": "0.1.5",
+  "description": "This project is to solve a need for the company Distribuidora Gramense, to automatically generate the promotions flyers.",
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
