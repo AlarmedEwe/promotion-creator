@@ -1,6 +1,5 @@
 'use strict';
 const excelToJson = require('convert-excel-to-json');
-const { jsPDF } = require('jspdf');
 
 var flyerContent;
 setTimeout(() => { flyerContent = flyer.contentDocument; }, 1500);
@@ -34,14 +33,7 @@ function printPage()
 
 function savePage()
 {
-    let doc = new jsPDF();
-    doc.html(flyerContent.body, {
-        margin: 10,
-        filename: 'Flyer',
-        callback: doc => {
-            doc.save();
-        }
-    });
+    alert('Desculpe, essa função ainda não está disponível. :(')
 }
 
 // On Changes
