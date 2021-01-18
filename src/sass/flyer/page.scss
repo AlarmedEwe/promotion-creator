@@ -6,19 +6,27 @@ main {
     width: 210mm;
     height: 297mm;
     background-color: white;
-    margin: 0 auto;
+    margin: 0 auto 10px;
 }
 
-#flyerMain {
+.flyerMain {
     display: flex;
-    height: calc(100% - 150px);
+    height: calc(100% - 100px);
+
+    &#flyerMain {
+        height: calc(100% - 150px);
+    }
 }
 
-#flyerAlert {
+.flyerAlert {
     writing-mode: vertical-rl;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 1rem;
     font-weight: bold;
-    height: calc(297mm - 150px);
+    height: calc(297mm - 100px);
     text-align: center;
+
+    &#flyerAlert {
+        height: calc(297mm - 150px);
+    }
 }

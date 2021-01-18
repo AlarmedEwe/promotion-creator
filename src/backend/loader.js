@@ -11,6 +11,7 @@ function Loader()
     let loader = setInterval(() => {
         // if(winLoad && iLoad){
             load.style.display = 'none';
+            currentWindow.maximize();
             clearInterval(loader);
         // }
     }, 2000);

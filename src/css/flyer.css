@@ -26,46 +26,55 @@ main {
   width: 210mm;
   height: 297mm;
   background-color: white;
-  margin: 0 auto;
+  margin: 0 auto 10px;
 }
 
-#flyerMain {
+.flyerMain {
   display: flex;
+  height: calc(100% - 100px);
+}
+.flyerMain#flyerMain {
   height: calc(100% - 150px);
 }
 
-#flyerAlert {
+.flyerAlert {
   writing-mode: vertical-rl;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1rem;
   font-weight: bold;
-  height: calc(297mm - 150px);
+  height: calc(297mm - 100px);
   text-align: center;
 }
+.flyerAlert#flyerAlert {
+  height: calc(297mm - 150px);
+}
 
-#flyerHeader,
-#flyerFooter {
+.flyerHeader,
+.flyerFooter {
   background: var(--primary-color);
   display: flex;
 }
 
-#flyerHeader {
+.flyerHeader {
   justify-content: space-between;
   align-items: center;
   border-bottom: var(--header-border-weight) var(--header-border-style) var(--secundary-color);
-  height: 100px;
-  padding-left: 10px;
-  padding-right: 10px;
+  padding: 10px;
+  height: 50px;
   color: var(--text-color);
 }
-#flyerHeader h1 {
+.flyerHeader#flyerHeader {
+  height: 100px;
+}
+.flyerHeader h1 {
   max-width: 50%;
 }
-#flyerHeader h2 {
+.flyerHeader h2 {
   text-align: right;
+  width: 100%;
 }
 
-#flyerFooter {
+.flyerFooter {
   border-top: var(--footer-border-weight) var(--footer-border-style) var(--secundary-color);
   font-family: Arial, Helvetica, sans-serif;
   font-size: 1.2rem;
@@ -75,30 +84,30 @@ main {
   color: var(--text-color);
 }
 
-#flyerList {
+.flyerList {
   display: grid;
   padding: 1.5rem 10px;
   width: calc(100%);
   grid-template-columns: auto auto auto auto auto;
 }
-#flyerList div {
+.flyerList div {
   display: grid;
   grid-template-columns: 40% 50%;
 }
-#flyerList div div {
+.flyerList div div {
   display: block;
 }
-#flyerList img {
+.flyerList img {
   max-width: 100%;
   max-height: calc((297mm - 150px) / 12);
 }
-#flyerList p {
+.flyerList p {
   font-family: var(--product-font);
   font-weight: bold;
   font-size: 8pt;
   text-transform: capitalize;
 }
-#flyerList .price {
+.flyerList .price {
   font-size: 13pt;
   font-weight: bold;
   color: var(--price-tag-color);
