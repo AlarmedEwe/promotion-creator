@@ -16,6 +16,8 @@
   --header-border-style: solid;
   --footer-border-weight: 0px;
   --footer-border-style: solid;
+  --grid-cols: 5;
+  --grid-rows: 6;
 }
 
 body {
@@ -26,7 +28,7 @@ main {
   width: 210mm;
   height: 297mm;
   background-color: white;
-  margin: 0 auto 10px;
+  margin: 0 auto 9mm;
 }
 
 .flyerMain {
@@ -71,6 +73,8 @@ main {
 }
 .flyerHeader h2 {
   text-align: right;
+}
+.flyerHeader:not(#flyerHeader) h2 {
   width: 100%;
 }
 
@@ -88,16 +92,19 @@ main {
   display: grid;
   padding: 1.5rem 10px;
   width: calc(100%);
-  grid-template-columns: auto auto auto auto auto;
+  grid-template-columns: repeat(var(--grid-cols), auto);
+  grid-template-rows: repeat(var(--grid-rows), minmax(auto, 120px));
 }
 .flyerList div {
   display: grid;
-  grid-template-columns: 40% 50%;
+  grid-template-columns: 40% calc(50% - 5px);
+  grid-column-gap: 5px;
 }
 .flyerList div div {
   display: block;
 }
 .flyerList img {
+  width: 100%;
   max-width: 100%;
   max-height: calc((297mm - 150px) / 12);
 }

@@ -21,6 +21,8 @@
     }
     h2 {
         text-align: right;
+    }
+    &:not(#flyerHeader) h2 {
         width: 100%;
     }
 }

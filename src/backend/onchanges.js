@@ -28,6 +28,10 @@ function onChanges()
 
         xlsxFile.createFlyer(result[Object.keys(result)[0]]);
     };
+    xlsFixed.onchange = function()
+    {
+        fileHandle.handleFileName(this);
+    }
 
     // Cabeçalhos e rodapé
     titleImg.onchange = function()
@@ -75,7 +79,11 @@ function onChanges()
     // Design geral
     colNumber.onchange = function()
     {
-        
+        xlsxFile.setValue('grid-cols', this.value);
+    }
+    rowNumber.onchange = function()
+    {
+        xlsxFile.setValue('grid-row', this.value);
     }
 
     productFont.onchange = function()
