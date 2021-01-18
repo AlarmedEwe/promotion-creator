@@ -21,6 +21,8 @@ function onChanges()
     xlsFile.onchange = function ()
     {
         fileHandle.handleFileName(this);
+
+        xlsxFile.clearPage();
         
         let result = excelToJson({
             sourceFile: xlsFile.files[0].path

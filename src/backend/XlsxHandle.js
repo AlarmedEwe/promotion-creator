@@ -14,6 +14,14 @@ class XlsxHandle
         this.flyerContent.querySelector(':root').style.setProperty(`--${variable}`,value);
     }
 
+    clearPage()
+    {
+        this.flyerContent.querySelectorAll('main:not(:first-child)').forEach(main => {
+            main.remove();
+        });
+        this.flyerContent.getElementById('flyerList').innerHTML = "";
+    }
+
     createProductExhibition(product)
     {
         let div = document.createElement('div');
@@ -23,6 +31,30 @@ class XlsxHandle
                     <div class="price">R$ ${product.C.toFixed(2).replace('.',',')}</div>
                 </div>`;
         return div;
+    }
+
+    createPage()
+    {
+        let page    = document.createElement('main'),
+            main    = document.createElement('div'),
+            header  = document.createElement('div'),
+            footer  = document.createElement('div');
+
+        header.classList.add('flyerHeader');
+        main.classList.add('flyerMain');
+        footer.classList.add('flyerFooter');
+
+        header.innerHTML    = '<h2>Visite nosso portal: portal.gramense.com.br</h2>';
+        main.innerHTML      = '<div class="flyerAlert"><p>IMAGENS DE CARÁTER ILUSTRATIVO. RESERVAMOS O DIREITO DE CORRIGIR EVENTUAIS ERROS GRÁFICOS.</p></div>';
+        main.innerHTML     += '<div class="flyerList"></div>';
+        footer.innerHTML    = '<p>VALIDADE 26 E 27 DE NOVEMBRO DE 2020 OU ENQUANTO DURAR O ESTOQUE.</p>';
+
+        page.appendChild(header);
+        page.appendChild(main);
+        page.appendChild(footer);
+        this.flyerContent.body.appendChild(page);
+
+        return main;
     }
 
     createFlyer(list)
@@ -36,38 +68,23 @@ class XlsxHandle
 
             if(i < 30)
             {
-                let div = this.createProductExhibition(product);
-                flyerList.appendChild(div);
+                flyerList.appendChild(
+                    this.createProductExhibition(product)
+                );
             } else 
             {
                 let main;
 
                 if (i % 30 == 0)
                 {
-                    let page    = document.createElement('main'),
-                        header  = document.createElement('div'),
-                        footer  = document.createElement('div');
-                    main    = document.createElement('div');
-
-                    header.classList.add('flyerHeader');
-                    main.classList.add('flyerMain');
-                    footer.classList.add('flyerFooter');
-
-                    header.innerHTML    = '<h2>Visite nosso portal: portal.gramense.com.br</h2>';
-                    main.innerHTML      = '<div class="flyerAlert"><p>IMAGENS DE CARÁTER ILUSTRATIVO. RESERVAMOS O DIREITO DE CORRIGIR EVENTUAIS ERROS GRÁFICOS.</p></div>';
-                    main.innerHTML     += '<div class="flyerList"></div>';
-                    footer.innerHTML    = '<p>VALIDADE 26 E 27 DE NOVEMBRO DE 2020 OU ENQUANTO DURAR O ESTOQUE.</p>';
-
-                    page.appendChild(header);
-                    page.appendChild(main);
-                    page.appendChild(footer);
-                    this.flyerContent.body.appendChild(page);
+                    main = this.createPage();
                 } else {
                     main = this.flyerContent.querySelector('main:last-child');
                 }
 
-                let div = this.createProductExhibition(product);
-                main.querySelector('.flyerList').appendChild(div);
+                main.querySelector('.flyerList').appendChild(
+                    this.createProductExhibition(product)
+                );
             }
         }
     }
