@@ -1,1 +1,1 @@
-let Start = require('./backend/app');
+require('./backend/app');

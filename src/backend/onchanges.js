@@ -24,15 +24,39 @@ function onChanges()
 
         xlsxFile.clearPage();
         
-        let result = excelToJson({
-            sourceFile: xlsFile.files[0].path
-        });
+        let normalPrices = excelToJson({
+                sourceFile: xlsFile.files[0].path
+            }),
+            fixedPrices  = (xlsFixed.files.length != 0) ? excelToJson({
+                sourceFile: xlsFixed.files[0].path
+            }) : {};
 
-        xlsxFile.createFlyer(result[Object.keys(result)[0]]);
+        xlsxFile.createFlyer(
+            normalPrices[Object.keys(normalPrices)[0]],
+            fixedPrices[Object.keys(fixedPrices)[0]]
+        );
     };
     xlsFixed.onchange = function()
     {
         fileHandle.handleFileName(this);
+        xlsxFile.clearPage();
+
+        let normalPrices = (xlsFile.files.length != 0) ? excelToJson({
+                sourceFile: xlsFile.files[0].path
+            }) : {},
+            fixedPrices  = excelToJson({
+                sourceFile: xlsFixed.files[0].path
+            });
+        
+        if (xlsFile.files.length != 0)
+            xlsxFile.createFlyer(
+                normalPrices[Object.keys(normalPrices)[0]],
+                fixedPrices[Object.keys(fixedPrices)[0]]
+            );
+        else
+            xlsxFile.createFlyer(
+                fixedPrices[Object.keys(fixedPrices)[0]]
+            );
     }
 
     // Cabeçalhos e rodapé

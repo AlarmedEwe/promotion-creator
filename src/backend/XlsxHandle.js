@@ -57,7 +57,7 @@ class XlsxHandle
         return main;
     }
 
-    createFlyer(list)
+    createFlyer(list, fixedPrices = null)
     {
         list.shift();
         let flyerList = this.flyerContent.getElementById('flyerList');
@@ -71,7 +71,7 @@ class XlsxHandle
                 flyerList.appendChild(
                     this.createProductExhibition(product)
                 );
-            } else 
+            } else
             {
                 let main;
 

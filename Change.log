@@ -23,7 +23,7 @@
         2 Refatoring
         3 CSS Refatoring
         4 Upgrade side menu form
-0.1.5 PrintPage
+0.1.5 Print Page
         0 Handle On Changes
         1 Print page and start making save method
         2 Added Fontawesome to project
@@ -31,3 +31,10 @@
         4 Refatoring SASS
         5 I'd temporally gived up about save() button
         6 Printing successfully
+0.2.0 Multiple page printing
+        0 Refatoring JS
+        1 Multiple pages
+        2 Display more products
+        3 Refatoring grid layout
+        4 Bug fixed: clear page b4 write
+        6 Fixed prices insert handle
