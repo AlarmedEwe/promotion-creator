@@ -28,7 +28,7 @@ main {
   width: 210mm;
   height: 297mm;
   background-color: white;
-  margin: 0 auto 9mm;
+  margin: 0 auto 10mm;
 }
 
 .flyerMain {
@@ -93,7 +93,7 @@ main {
   padding: 1.5rem 10px;
   width: calc(100%);
   grid-template-columns: repeat(var(--grid-cols), auto);
-  grid-template-rows: repeat(var(--grid-rows), minmax(auto, 120px));
+  grid-template-rows: repeat(var(--grid-rows), minmax(auto, 200px));
 }
 .flyerList div {
   display: grid;
@@ -104,7 +104,6 @@ main {
   display: block;
 }
 .flyerList img {
-  width: 100%;
   max-width: 100%;
   max-height: calc((297mm - 150px) / 12);
 }
