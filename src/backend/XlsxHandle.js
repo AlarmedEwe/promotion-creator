@@ -22,14 +22,21 @@ class XlsxHandle
         this.flyerContent.getElementById('flyerList').innerHTML = "";
     }
 
-    createProductExhibition(product)
+    createProductExhibition(product, withFixed = false)
     {
         let div = document.createElement('div');
-            div.innerHTML = `<img src="${product.D}" alt="${product.A}"/>
-                <div>
-                    <p>${product.A.toLowerCase()} ${product.B}</p>
-                    <div class="price">R$ ${product.C.toFixed(2).replace('.',',')}</div>
-                </div>`;
+
+        if (withFixed)
+            if (product.isFixedPrice) div.classList.add('fixed');
+
+        product = (withFixed) ? product.item : product;
+        
+        div.innerHTML = `<img src="${product.D}" alt="${product.A}"/>
+            <div>
+                <p>${product.A.toLowerCase()} ${product.B}</p>
+                <div class="price">R$ ${product.C.toFixed(2).replace('.',',')}</div>
+            </div>`;
+
         return div;
     }
 
@@ -57,35 +64,62 @@ class XlsxHandle
         return main;
     }
 
-    createFlyer(list, fixedPrices = null)
+    separateFixedPrices(promoPrices, fixedPrices, numRows = 6, numCols = 5)
     {
-        list.shift();
-        let flyerList = this.flyerContent.getElementById('flyerList');
+        let finalList    = [],
+            item         = 0,
+            promoCounter = 0,
+            fixedCounter = 0;
+
+        for (let i = 0; i < (promoPrices.length + fixedPrices.length); i++)
+        {
+            if (item < numCols * 2 || item >= numCols * 3)
+            {
+                finalList.push({"isFixedPrice": false, "item": promoPrices[promoCounter]});
+                promoCounter++;
+            } else
+            {
+                if (fixedPrices[fixedCounter] != undefined)
+                    finalList.push({"isFixedPrice": true, "item": fixedPrices[fixedCounter]});
+                fixedCounter++;
+            }
+
+            item = (item < numRows * numCols)
+                ? item + 1
+                : item = 1;
+        }
+
+        return finalList;
+    }
+
+    createFlyer(promoPrices, fixedPrices = null, numRows = 6, numCols = 5)
+    {
+        let flyerList = this.flyerContent.getElementById('flyerList'),
+            hasFixeds = (fixedPrices != null);
+        
+        promoPrices.shift();
+        if(hasFixeds) fixedPrices.shift();
+        
+        let list = (hasFixeds)
+            ? this.separateFixedPrices(promoPrices, fixedPrices, numRows, numCols)
+            : promoPrices;
 
         for (let i in list)
         {
             let product = list[i];
 
-            if(i < 30)
+            if(i >= numRows * numCols)
             {
-                flyerList.appendChild(
-                    this.createProductExhibition(product)
-                );
-            } else
-            {
-                let main;
+                let main = (i % 30 == 0)
+                    ? this.createPage()
+                    : this.flyerContent.querySelector('main:last-child');
 
-                if (i % 30 == 0)
-                {
-                    main = this.createPage();
-                } else {
-                    main = this.flyerContent.querySelector('main:last-child');
-                }
-
-                main.querySelector('.flyerList').appendChild(
-                    this.createProductExhibition(product)
-                );
+                flyerList = main.querySelector('.flyerList');
             }
+
+            flyerList.appendChild(
+                this.createProductExhibition(product, (hasFixeds))
+            );
         }
     }
 

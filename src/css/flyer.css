@@ -103,6 +103,9 @@ main {
 .flyerList div div {
   display: block;
 }
+.flyerList .fixed {
+  background-color: rgba(255, 0, 0, 0.2);
+}
 .flyerList img {
   max-width: 100%;
   max-height: calc((297mm - 150px) / 12);
