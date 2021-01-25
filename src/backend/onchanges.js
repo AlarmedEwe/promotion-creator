@@ -5,16 +5,16 @@ let FileHandle  = require('./fileHandle'),
 function onChanges()
 {
     let fileHandle = new FileHandle(),
-        xlsxFile   = new XlsxHandle();
+        flyer      = new XlsxHandle();
 
     printBtn.onclick = function()
     {
-        xlsxFile.printPage();
+        flyer.printPage();
     }
     // Arquivos
     title.onchange = function ()
     {
-        xlsxFile.changeTitle(this.value);
+        flyer.changeTitle(this.value);
     }
 
     // Dados
@@ -22,7 +22,7 @@ function onChanges()
     {
         fileHandle.handleFileName(this);
 
-        xlsxFile.clearPage();
+        flyer.clearPage();
         
         let normalPrices = excelToJson({
                 sourceFile: xlsFile.files[0].path
@@ -31,7 +31,7 @@ function onChanges()
                 sourceFile: xlsFixed.files[0].path
             }) : {};
 
-        xlsxFile.createFlyer(
+        flyer.createFlyer(
             normalPrices[Object.keys(normalPrices)[0]],
             fixedPrices[Object.keys(fixedPrices)[0]]
         );
@@ -39,7 +39,7 @@ function onChanges()
     xlsFixed.onchange = function()
     {
         fileHandle.handleFileName(this);
-        xlsxFile.clearPage();
+        flyer.clearPage();
 
         let normalPrices = (xlsFile.files.length != 0) ? excelToJson({
                 sourceFile: xlsFile.files[0].path
@@ -49,78 +49,154 @@ function onChanges()
             });
         
         if (xlsFile.files.length != 0)
-            xlsxFile.createFlyer(
+            flyer.createFlyer(
                 normalPrices[Object.keys(normalPrices)[0]],
                 fixedPrices[Object.keys(fixedPrices)[0]]
             );
         else
-            xlsxFile.createFlyer(
+            flyer.createFlyer(
                 fixedPrices[Object.keys(fixedPrices)[0]]
             );
     }
 
     // Cabeçalhos e rodapé
+    /*
     titleImg.onchange = function()
     {
         fileHandle.handleFileName(this);
     }
+    */
 
     headerColor.onchange = function()
     {
-        xlsxFile.setValue('primary-color', this.value);
+        flyer.setValue('primary-color', this.value);
     }
 
     headerTextColor.onchange = function()
     {
-        xlsxFile.setValue('text-color', this.value);
+        flyer.setValue('text-color', this.value);
     }
 
     // Borda do Cabeçalho
     headerBorderColor.onchange = function()
     {
-        xlsxFile.setValue('secundary-color', this.value);
+        flyer.setValue('secundary-color', this.value);
     }
 
     headerBorderWeight.onchange = function()
     {
-        xlsxFile.setValue('header-border-weight', `${this.value}px`);
+        flyer.setValue('header-border-weight', `${this.value}px`);
     }
 
     headerBorderStyle.onchange = function()
     {
-        xlsxFile.setValue('header-border-style', this.value);
+        flyer.setValue('header-border-style', this.value);
     }
 
     // Borda do Rodapé
     footerBorderWeight.onchange = function()
     {
-        xlsxFile.setValue('footer-border-weight', `${this.value}px`);
+        flyer.setValue('footer-border-weight', `${this.value}px`);
     }
 
     footerBorderStyle.onchange = function()
     {
-        xlsxFile.setValue('footer-border-style', this.value);
+        flyer.setValue('footer-border-style', this.value);
     }
 
     // Design geral
     colNumber.onchange = function()
     {
-        xlsxFile.setValue('grid-cols', this.value);
+        flyer.setValue('grid-cols', this.value);
     }
     rowNumber.onchange = function()
     {
-        xlsxFile.setValue('grid-row', this.value);
+        flyer.setValue('grid-row', this.value);
     }
 
     productFont.onchange = function()
     {
-        xlsxFile.setValue('product-font', this.value);
+        flyer.setValue('product-font', this.value);
     }
 
     // Etiqueta de preço
-    priceColor.onchange = function() {
-        xlsxFile.setValue('price-tag-color', this.value);
+    priceTagFont.onchange = function()
+    {
+        flyer.setValue('price-tag-font', this.value);
     }
+    priceTagColor.onchange = function()
+    {
+        flyer.setValue('price-tag-color', this.value);
+    }
+    priceTagImg.onchange = function()
+    {
+        // price-tag-img
+    }
+
+    // Preços fixos
+    fixedCols.onchange = function()
+    {
+        flyer.setValue('fixed-cols', this.value);
+    }
+    fxBgColor.onchange = function()
+    {
+        flyer.setValue('fx-bg-color', this.value);
+    }
+    fxBdColor.onchange = function()
+    {
+        flyer.setValue('fx-bd-color', this.value);
+    }
+    fxBdWeight.onchange = function()
+    {
+        flyer.setValue('fx-bd-weight', this.value + 'px');
+    }
+    fxBdStyle.onchange = function()
+    {
+        flyer.setValue('fx-bd-style', this.value);
+    }
+    fxFtColor.onchange = function()
+    {
+        flyer.setValue('fx-ft-color', this.value);
+    }
+
+        // Etiqueta de preço
+        fxPriceColor.onchange = function()
+        {
+            flyer.setValue('fx-price-color', this.value);
+        }
+        fxPriceBg.onchange = function()
+        {
+            flyer.setValue('fx-price-bg', this.value);
+        }
+        // Titulo
+        fxTitleBgColor.onchange = function()
+        {
+            flyer.setValue('fx-title-bg-color', this.value);
+        }
+        fxTitleBdColor.onchange = function()
+        {
+            flyer.setValue('fx-title-bd-color', this.value);
+        }
+        fxTitleBdWeight.onchange = function()
+        {
+            flyer.setValue('fx-title-bd-weight', this.value + 'px');
+        }
+        fxTitleBdStyle.onchange = function()
+        {
+            flyer.setValue('fx-title-bd-style', this.value);
+        }
+        fxTitleFtColor.onchange = function()
+        {
+            flyer.setValue('fx-title-ft-color', this.value);
+        }
+        fxTitleFtSize.onchange = function()
+        {
+            flyer.setValue('fx-title-ft-size', this.value);
+        }
+        fxTitleFtFamily.onchange = function()
+        {
+            flyer.setValue('fx-title-ft-family', this.value);
+        }
 }
 
 module.exports = onChanges;

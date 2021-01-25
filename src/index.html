@@ -160,20 +160,20 @@
                     </p>
                     <h2>Etiqueta de preço</h2>
                     <p>
-                        <label for="fontPrice">Fonte</label>
-                        <select id="fontPrice">
+                        <label for="priceTagFont">Fonte</label>
+                        <select id="priceTagFont">
                             <option value="Arial">Arial</option>
                         </select>
                     </p>
                     <p>
-                        <label for="priceColor">Cor</label>
-                        <input type="color" id="priceColor" value="#333333"/>
-                        <label for="priceColor" class="inputColor">&nbsp;</label>
+                        <label for="priceTagColor">Cor</label>
+                        <input type="color" id="priceTagColor" value="#333333"/>
+                        <label for="priceTagColor" class="inputColor">&nbsp;</label>
                     </p>
                     <p>
-                        <label for="tagImg">Imagem de fundo</label>
-                        <input type="file" id="tagImg" />
-                        <label for="tagImg" class="inputFile">&nbsp;</label>
+                        <label for="priceTagImg">Imagem de fundo</label>
+                        <input type="file" id="priceTagImg" />
+                        <label for="priceTagImg" class="inputFile">&nbsp;</label>
                     </p>
                 </div>
 
@@ -192,6 +192,22 @@
                         <input type="color" id="fxBdColor" value="#165991" />
                     </p>
                     <p>
+                        <label for="fxBdWeight">Grossura da borda</label>
+                        <input type="number" id="fxBdWeight" value="2">
+                    </p>
+                    <p>
+                        <label for="fxBdStyle">Estilo da borda</label>
+                        <select id="fxBdStyle">
+                            <option value="hidden">Nenhuma borda</option>
+                            <option value="solid" selected>Sólida</option>
+                            <option value="dotted">Pontilhada</option>
+                            <option value="dashed">Linha de corte</option>
+                            <option value="double">Dobrada</option>
+                            <option value="groove">Fosca</option>
+                            <option value="ridge">Moldura</option>
+                        </select>
+                    </p>
+                    <p>
                         <label for="fxFtColor">Cor da fonte</label>
                         <input type="color" id="fxFtColor" value="#E9E9E9" />
                     </p>
@@ -199,6 +215,7 @@
                     <h2>Etiqueta de preço</h2>
                     <p>
                         <label for="fxPriceColor">Cor</label>
+                        <input type="color" id="fxPriceColor" value="#66FF66" />
                     </p>
                     <p>
                         <label for="fxPriceBg">Imagem de fundo</label>

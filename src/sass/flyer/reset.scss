@@ -6,38 +6,43 @@
 }
 
 :root {
-    --product-font:     Arial;
-    --price-tag-font:   Arial;
+    // Fonts
+    --product-font:         Arial;
+    --price-tag-font:       Arial;
+    --fx-title-ft-family:   Arial;
+    --fx-title-ft-size:     18pt;
 
+    // Colors
     --primary-color:    #0095D1;
     --secundary-color:  #165991;
     --price-tag-color:  #333333;
+    --fx-price-color:   #66FF66;
     --text-color:       #333333;
+    --fx-bg-color:      #0095D1;
+    --fx-bd-color:      #165991;
+    --fx-ft-color:      #E9E9E9;
+    --fx-title-bg-color:#0095D1;
+    --fx-title-bd-color:#165991;
+    --fx-title-ft-color:#E9E9E9;
 
+    // Header Border
     --header-border-weight: 5px;
     --header-border-style:  solid;
     --footer-border-weight: 0px;
     --footer-border-style:  solid;
 
+    // Fixed prices
+    --fx-bd-weight:         2px;
+    --fx-bd-style:          solid;
+    --fx-title-height:      40px;
+    --fx-title-width:       127px;
+    --fx-title-bd-weight:   2px;
+    --fx-title-bd-style:    solid;
+    
+    // Grid
     --grid-cols:    5;
     --grid-rows:    6;
-
     --fixed-cols:   5;
-    --fx-bg-color:  #0095D1;
-    --fx-bd-color:  #165991;
-    --fx-ft-color:  #E9E9E9;
-
-    --fx-price-color: #66FF66;
-
-    --fx-title-height:     40px;
-    --fx-title-width:      127px;
-    --fx-title-bg-color:   #0095D1;
-    --fx-title-bd-color:   #165991;
-    --fx-title-bd-weight:  2px;
-    --fx-title-bd-style:   solid;
-    --fx-title-ft-color:   #E9E9E9;
-    --fx-title-ft-size:    18pt;
-    --fx-title-ft-family:  Arial, sans-serif;
 }
 
 ::-webkit-scrollbar {

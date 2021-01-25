@@ -1,5 +1,5 @@
 let Loader      = require('./loader'),
-    onChanges = require('./onchanges');
+    onChanges = require('./onChanges');
 
 function Start()
 {
