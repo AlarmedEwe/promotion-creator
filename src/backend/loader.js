@@ -10,6 +10,7 @@ function Loader()
 
     let loader = setInterval(() => {
         // if(winLoad && iLoad){
+            console.clear();
             load.style.display = 'none';
             currentWindow.maximize();
             clearInterval(loader);

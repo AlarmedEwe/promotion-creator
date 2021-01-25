@@ -15,7 +15,7 @@
 }
 
 #frame h1 {
-    webkit-app-region: drag;
+    -webkit-app-region: drag;
 }
 
 #frame .frame-btn {
