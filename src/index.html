@@ -25,152 +25,239 @@
 
             <form onsubmit="return false;">
                 <h1>Arquivo</h1>
-                <p>
-                    <label for="title">Título da promoção</label>
-                    <input type="text" id="title" value="Titulo" />
-                </p>
-                <p>
-                    <label for="dtIni">Início da promoção</label>
-                    <input type="date" id="dtIni" />
-                </p>
-                <p>
-                    <label for="dtFin">Fim da promoção</label>
-                    <input type="date" id="dtFin" />
-                </p>
+                <div id="fileDiv">
+                    <p>
+                        <label for="title">Título da promoção</label>
+                        <input type="text" id="title" value="Titulo" />
+                    </p>
+                    <p>
+                        <label for="dtIni">Início da promoção</label>
+                        <input type="date" id="dtIni" />
+                    </p>
+                    <p>
+                        <label for="dtFin">Fim da promoção</label>
+                        <input type="date" id="dtFin" />
+                    </p>
+                </div>
 
                 <h1>Dados</h1>
-                <p>
-                    <label for="xlsFile">Preços promocionais (Excel)</label>
-                    <input
-                        type="file"
-                        id="xlsFile"
-                        accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
-                    />
-                    <label
-                        for="xlsFile"
-                        id="xlsLabel"
-                        class="inputFile"
-                    >
-                        &nbsp;
-                    </label>
-                </p>
-                <p>
-                    <label for="xlsFixed">Preços fixos (Excel)</label>
-                    <input
-                        type="file"
-                        id="xlsFixed"
-                        accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
-                    />
-                    <label
-                        for="xlsFixed"
-                        id="xlsLabel"
-                        class="inputFile"
-                    >
-                        &nbsp;
-                    </label>
-                </p>
+                <div id="dataDiv">
+                    <p>
+                        <label for="xlsFile">Preços promocionais (Excel)</label>
+                        <input
+                            type="file"
+                            id="xlsFile"
+                            accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                        />
+                        <label
+                            for="xlsFile"
+                            id="xlsLabel"
+                            class="inputFile"
+                        >
+                            &nbsp;
+                        </label>
+                    </p>
+                    <p>
+                        <label for="xlsFixed">Preços fixos (Excel)</label>
+                        <input
+                            type="file"
+                            id="xlsFixed"
+                            accept="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet, application/vnd.ms-excel"
+                        />
+                        <label
+                            for="xlsFixed"
+                            id="xlsLabel"
+                            class="inputFile"
+                        >
+                            &nbsp;
+                        </label>
+                    </p>
+                </div>
 
                 <h1>Cabeçalho e rodapé</h1>
-                <p>
-                    <label for="titleImg">Imagem de título</label>
-                    <input
-                        type="file"
-                        id="titleImg"
-                        accept="image/*"
-                    />
-                    <label
-                        for="titleImg"
-                        id="titleLabel"
-                        class="inputFile"
-                    >
-                        &nbsp;
-                    </label>
-                </p>
-                <p>
-                    <label for="headerColor">Cor do Cabeçalho/Rodapé</label>
-                    <input type="color" id="headerColor" value="#0095D1"/>
-                    <label for="headerColor" class="inputColor">&nbsp;</label>
-                </p>
-                <p>
-                    <label for="headerTextColor">Cor da fonte</label>
-                    <input type="color" id="headerTextColor" value="#333333"/>
-                    <label for="headerTextColor" class="inputColor"></label>
-                </p>
-                <p>
-                    <label for="headerBorderColor">Cor da borda</label>
-                    <input type="color" id="headerBorderColor" value="#165991"/>
-                    <label for="headerBorderColor" class="inputColor">&nbsp;</label>
-                </p>
-                <h2>Borda do Cabeçalho</h2>
-                <p>
-                    <label for="headerBorderWeight">Grossura</label>
-                    <input type="number" id="headerBorderWeight" value="5" min="0"/>
-                </p>
-                <p>
-                    <label for="headerBorderStyle">Estilo</label>
-                    <select id="headerBorderStyle">
-                        <option value="hidden">Nenhuma borda</option>
-                        <option value="solid" selected>Sólida</option>
-                        <option value="dotted">Pontilhada</option>
-                        <option value="dashed">Linha de corte</option>
-                        <option value="double">Dobrada</option>
-                        <option value="groove">Fosca</option>
-                        <option value="ridge">Moldura</option>
-                    </select>
-                </p>
-                <h2>Borda do Rodapé</h2>
-                <p>
-                    <label for="footerBorderWeight">Grossura</label>
-                    <input type="number" id="footerBorderWeight" value="0" min="0"/>
-                </p>
-                <p>
-                    <label for="footerBorderStyle">Estilo</label>
-                    <select id="footerBorderStyle">
-                        <option value="hidden">Nenhuma borda</option>
-                        <option value="solid" selected>Sólida</option>
-                        <option value="dotted">Pontilhada</option>
-                        <option value="dashed">Linha de corte</option>
-                        <option value="double">Dobrada</option>
-                        <option value="groove">Fosca</option>
-                        <option value="ridge">Moldura</option>
-                    </select>
-                </p>
+                <div id="headerDiv">
+                    <!-- <p>
+                        <label for="titleImg">Imagem de título</label>
+                        <input
+                            type="file"
+                            id="titleImg"
+                            accept="image/*"
+                        />
+                        <label
+                            for="titleImg"
+                            id="titleLabel"
+                            class="inputFile"
+                        >
+                            &nbsp;
+                        </label>
+                    </p> -->
+                    <p>
+                        <label for="headerColor">Cor do fundo</label>
+                        <input type="color" id="headerColor" value="#0095D1"/>
+                        <label for="headerColor" class="inputColor">&nbsp;</label>
+                    </p>
+                    <p>
+                        <label for="headerTextColor">Cor da fonte</label>
+                        <input type="color" id="headerTextColor" value="#333333"/>
+                        <label for="headerTextColor" class="inputColor"></label>
+                    </p>
+                    <p>
+                        <label for="headerBorderColor">Cor da borda</label>
+                        <input type="color" id="headerBorderColor" value="#165991"/>
+                        <label for="headerBorderColor" class="inputColor">&nbsp;</label>
+                    </p>
+                    <h2>Borda do Cabeçalho</h2>
+                    <p>
+                        <label for="headerBorderWeight">Grossura</label>
+                        <input type="number" id="headerBorderWeight" value="5" min="0"/>
+                    </p>
+                    <p>
+                        <label for="headerBorderStyle">Estilo</label>
+                        <select id="headerBorderStyle">
+                            <option value="hidden">Nenhuma borda</option>
+                            <option value="solid" selected>Sólida</option>
+                            <option value="dotted">Pontilhada</option>
+                            <option value="dashed">Linha de corte</option>
+                            <option value="double">Dobrada</option>
+                            <option value="groove">Fosca</option>
+                            <option value="ridge">Moldura</option>
+                        </select>
+                    </p>
+                    <h2>Borda do Rodapé</h2>
+                    <p>
+                        <label for="footerBorderWeight">Grossura</label>
+                        <input type="number" id="footerBorderWeight" value="0" min="0"/>
+                    </p>
+                    <p>
+                        <label for="footerBorderStyle">Estilo</label>
+                        <select id="footerBorderStyle">
+                            <option value="hidden">Nenhuma borda</option>
+                            <option value="solid" selected>Sólida</option>
+                            <option value="dotted">Pontilhada</option>
+                            <option value="dashed">Linha de corte</option>
+                            <option value="double">Dobrada</option>
+                            <option value="groove">Fosca</option>
+                            <option value="ridge">Moldura</option>
+                        </select>
+                    </p>
+                </div>
 
                 <h1>Design geral</h1>
-                <p>
-                    <label for="colNumber">Nº de colunas</label>
-                    <input type="number" id="colNumber" value="5" min="4" />
-                </p>
-                <p>
-                    <label for="rowNumber">Nº de linhas</label>
-                    <input type="number" id="rowNumber" value="6" min="1" />
-                </p>
-                <p>
-                    <label for="productFont">Fonte dos nomes dos produtos</label>
-                    <select id="productFont">
-                        <option value="Arial">Arial</option>
-                    </select>
-                </p>
-                <h2>Etiqueta de preço</h2>
-                <p>
-                    <label for="fontPrice">Fonte da etiqueta de preço</label>
-                    <select id="fontPrice">
-                        <option value="Arial">Arial</option>
-                    </select>
-                </p>
-                <p>
-                    <label for="priceColor">Cor da etiqueta de preço</label>
-                    <input type="color" id="priceColor" value="#333333"/>
-                    <label for="priceColor" class="inputColor">&nbsp;</label>
-                </p>
-                <p>
-                    <label for="tagImg">Imagem da etiqueta de preço</label>
-                    <input type="file" id="tagImg" />
-                    <label for="tagImg" class="inputFile">&nbsp;</label>
-                </p>
-                <!-- <p>
-                    <button id="send">Gerar promoção</button>
-                </p> -->
+                <div id="designDiv">
+                    <p>
+                        <label for="colNumber">Nº de colunas</label>
+                        <input type="number" id="colNumber" value="5" min="4" />
+                    </p>
+                    <p>
+                        <label for="rowNumber">Nº de linhas</label>
+                        <input type="number" id="rowNumber" value="6" min="1" />
+                    </p>
+                    <p>
+                        <label for="productFont">Fonte dos nomes dos produtos</label>
+                        <select id="productFont">
+                            <option value="Arial">Arial</option>
+                        </select>
+                    </p>
+                    <h2>Etiqueta de preço</h2>
+                    <p>
+                        <label for="fontPrice">Fonte</label>
+                        <select id="fontPrice">
+                            <option value="Arial">Arial</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="priceColor">Cor</label>
+                        <input type="color" id="priceColor" value="#333333"/>
+                        <label for="priceColor" class="inputColor">&nbsp;</label>
+                    </p>
+                    <p>
+                        <label for="tagImg">Imagem de fundo</label>
+                        <input type="file" id="tagImg" />
+                        <label for="tagImg" class="inputFile">&nbsp;</label>
+                    </p>
+                </div>
+
+                <h1>Preços Fixos</h1>
+                <div id="fixedDiv">
+                    <p>
+                        <label for="fixedCols">Nº de colunas</label>
+                        <input type="number" id="fixedCols" value="5" min="2" />
+                    </p>
+                    <p>
+                        <label for="fxBgColor">Cor do fundo</label>
+                        <input type="color" id="fxBgColor" value="#0095D1" />
+                    </p>
+                    <p>
+                        <label for="fxBdColor">Cor da borda</label>
+                        <input type="color" id="fxBdColor" value="#165991" />
+                    </p>
+                    <p>
+                        <label for="fxFtColor">Cor da fonte</label>
+                        <input type="color" id="fxFtColor" value="#E9E9E9" />
+                    </p>
+
+                    <h2>Etiqueta de preço</h2>
+                    <p>
+                        <label for="fxPriceColor">Cor</label>
+                    </p>
+                    <p>
+                        <label for="fxPriceBg">Imagem de fundo</label>
+                        <input type="file" id="fxPriceBg" />
+                        <label for="fxPriceBg" class="inputFile">&nbsp;</label>
+                    </p>
+
+                    <h2>Titulo</h2>
+                    <p>
+                        <label for="fxTitleBgColor">Cor do fundo</label>
+                        <input type="color" id="fxTitleBgColor" value="#0095D1" />
+                    </p>
+                    <p>
+                        <label for="fxTitleBdColor">Cor da borda</label>
+                        <input type="color" id="fxTitleBdColor" value="#165991" />
+                    </p>
+                    <p>
+                        <label for="fxTitleBdWeight">Grossura da borda</label>
+                        <input type="number" id="fxTitleBdWeight" value="2" min="0" />
+                    </p>
+                    <p>
+                        <label for="fxTitleBdStyle">Estilo da borda</label>
+                        <select id="fxTitleBdStyle">
+                            <option value="hidden">Nenhuma borda</option>
+                            <option value="solid" selected>Sólida</option>
+                            <option value="dotted">Pontilhada</option>
+                            <option value="dashed">Linha de corte</option>
+                            <option value="double">Dobrada</option>
+                            <option value="groove">Fosca</option>
+                            <option value="ridge">Moldura</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="fxTitleFtColor">Cor da fonte</label>
+                        <input type="color" id="fxTitleFtColor" value="#E9E9E9" />
+                    </p>
+                    <p>
+                        <label for="fxTitleFtSize">Tamanho da fonte</label>
+                        <select id="fxTitleFtSize">
+                            <option value="10pt">10</option>
+                            <option value="12pt">12</option>
+                            <option value="14pt">14</option>
+                            <option value="16pt">16</option>
+                            <option value="18pt" selected>18</option>
+                            <option value="20pt">20</option>
+                            <option value="22pt">22</option>
+                            <option value="24pt">24</option>
+                            <option value="26pt">26</option>
+                            <option value="28pt">28</option>
+                            <option value="32pt">32</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="fxTitleFtFamily">Fonte</label>
+                        <select id="fxTitleFtFamily">
+                            <option value="Arial">Arial</option>
+                        </select>
+                    </p>
+                </div>
             </form>
         </div>
     </main>

@@ -39,3 +39,23 @@
     --fx-title-ft-size:    18pt;
     --fx-title-ft-family:  Arial, sans-serif;
 }
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+::-webkit-scrollbar-track {
+    background-color: #191a21;
+}
+::-webkit-scrollbar-thumb {
+    background-color: #6272a4;
+}
+::-webkit-scrollbar-corner {
+    background: repeating-linear-gradient(
+        45deg,
+        #191a21,
+        #191a21 2px,
+        #6272a4 2px,
+        #6272a4 4px
+    );
+}
