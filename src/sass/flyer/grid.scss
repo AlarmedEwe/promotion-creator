@@ -1,17 +1,20 @@
 .flyerList {
-    display: grid;
     padding: 1.5rem 10px;
     width: calc(100%);
-    grid-template-columns: repeat(var(--grid-cols), auto);
-    grid-template-rows: repeat(var(--grid-rows), minmax(auto, 200px));
 
-    div {
+    .row {
         display: grid;
-        grid-template-columns: 40% calc(50% - 5px);
-        grid-column-gap: 5px;
+        grid-template-columns: repeat(var(--grid-cols), calc(100% / var(--grid-cols)));
+        height: calc((297mm - 150px) / var(--grid-rows));
 
         div {
-            display: block;
+            display: grid;
+            grid-template-columns: 40% calc(50% - 5px);
+            grid-column-gap: 5px;
+    
+            div {
+                display: block;
+            }
         }
     }
     
