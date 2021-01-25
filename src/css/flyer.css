@@ -1,3 +1,4 @@
+@charset "UTF-8";
 * {
   margin: 0;
   padding: 0;
@@ -18,6 +19,20 @@
   --footer-border-style: solid;
   --grid-cols: 5;
   --grid-rows: 6;
+  --fixed-cols: 5;
+  --fx-bg-color: #0095D1;
+  --fx-bd-color: #165991;
+  --fx-ft-color: #E9E9E9;
+  --fx-price-color: #66FF66;
+  --fx-title-height: 40px;
+  --fx-title-width: 127px;
+  --fx-title-bg-color: #0095D1;
+  --fx-title-bd-color: #165991;
+  --fx-title-bd-weight: 2px;
+  --fx-title-bd-style: solid;
+  --fx-title-ft-color: #E9E9E9;
+  --fx-title-ft-size: 18pt;
+  --fx-title-ft-family: Arial, sans-serif;
 }
 
 body {
@@ -94,8 +109,9 @@ main {
 }
 .flyerList .row {
   display: grid;
-  grid-template-columns: repeat(var(--grid-cols), calc(100% / var(--grid-cols)));
   height: calc((297mm - 150px) / var(--grid-rows));
+  align-items: center;
+  grid-template-columns: repeat(var(--grid-cols), calc(100% / var(--grid-cols)));
 }
 .flyerList .row div {
   display: grid;
@@ -106,7 +122,27 @@ main {
   display: block;
 }
 .flyerList .fixed {
-  background-color: rgba(255, 0, 0, 0.2);
+  position: relative;
+  padding: 20px 10px 10px;
+  border: 2px solid var(--fx-bd-color);
+  color: var(--fx-ft-color);
+  background-color: var(--fx-bg-color);
+}
+.flyerList .fixed::before {
+  content: "Preços Fixos";
+  position: absolute;
+  top: calc(var(--fx-title-height) / -2);
+  left: calc(50% - (var(--fx-title-width) - 20px) / 2);
+  padding: 5px 10px;
+  text-align: center;
+  border: var(--fx-title-bd-weight) var(--fx-title-bd-style) var(--fx-title-bd-color);
+  color: var(--fx-title-ft-color);
+  font-size: var(--fx-title-ft-size);
+  font-family: var(--fx-title-ft-family);
+  background-color: var(--fx-title-bg-color);
+}
+.flyerList .fixed .price {
+  color: var(--fx-price-color);
 }
 .flyerList img {
   max-width: 100%;

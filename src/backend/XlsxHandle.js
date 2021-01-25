@@ -77,7 +77,7 @@ class XlsxHandle
                 ? document.createElement('div')
                 : flyerList.querySelector('.row:last-child');
 
-            if (hasFixeds && rowCounter == 1 && fixedCounter < fixedPrices.length)
+            if (hasFixeds && rowCounter == 2 && fixedCounter < fixedPrices.length)
             {
                 if (colCounter == 1) row.classList.add('fixed');
                 
