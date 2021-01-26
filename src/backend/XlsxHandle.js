@@ -1,3 +1,6 @@
+const   fs = require('fs'),
+        {shell} = require('electron');
+
 class XlsxHandle
 {
     flyerContent;
@@ -125,12 +128,17 @@ class XlsxHandle
         flyer.contentWindow.print();
     }
 
-    /*
-    function savePage()
+    savePage()
     {
-        alert('Desculpe, essa função ainda não está disponível. :(')
+        let result  =  new XMLSerializer().serializeToString(this.flyerContent);
+
+        result = result.replace('css/flyer', __dirname.replaceAll('\\','/') + '/../css/flyer');
+
+       fs.writeFile('docs/out.html', result, res => {
+           alert('Salvo com sucesso');
+           shell.openExternal(__dirname + '\\..\\..\\docs\\out.html');
+       });
     }
-    */
 }
 
 module.exports = XlsxHandle;

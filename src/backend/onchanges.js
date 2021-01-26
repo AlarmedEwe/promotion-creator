@@ -7,10 +7,17 @@ function onChanges()
     let fileHandle = new FileHandle(),
         flyer      = new XlsxHandle();
 
+    // Buttons
     printBtn.onclick = function()
     {
         flyer.printPage();
     }
+    saveBtn.onclick = function()
+    {
+        flyer.savePage();
+    }
+
+
     // Arquivos
     title.onchange = function ()
     {
