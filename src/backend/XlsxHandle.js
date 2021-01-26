@@ -29,7 +29,9 @@ class XlsxHandle
     {
         let div = document.createElement('div');
 
-        let description = `<p>${product.A.toLowerCase()} ${product.B}</p>`;
+        let description = (product.B) ?
+            `<p>${product.A.toLowerCase()} ${product.B}</p>`
+            : `<p>${product.A.toLowerCase()}</p>`;
         if (product.C != null) description += `<p class="obs">${product.C}</p>`;
         description += `<div class="price">R$ ${product.D.toFixed(2).replace('.',',')}</div>`;
         if (product.E != null) description += `<div class="price">R$ ${product.E.toFixed(2).replace('.',',')}</div>`;
