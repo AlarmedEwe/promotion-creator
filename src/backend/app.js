@@ -3,8 +3,10 @@ let Loader      = require('./loader'),
 
 function Start()
 {
-    Loader();
-    onChanges();
+    Loader()
+    .then(() => {
+        onChanges();
+    });
 }
 
 module.exports = Start();
