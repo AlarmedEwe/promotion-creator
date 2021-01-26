@@ -8,7 +8,8 @@ class FileHandle
     {
         setTimeout(() => {
             flyer.contentDocument.querySelector('#flyerFooter p').innerHTML =
-                `VALIDADE ${this.now.getDate()} A ${this.now.getDate() + 2} `+
+                // `VALIDADE ${this.now.getDate() + 1} E ${this.now.getDate() + 2} `+
+                `VALIDADE ${this.now.getDate() + 2} E ${this.now.getDate() + 3} `+
                 `DE ${this.months[this.now.getMonth()]} DE ${this.now.getFullYear()} OU ENQUANTO DURAR O ESTOQUE.`;
         }, 1500);
     }

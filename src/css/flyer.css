@@ -15,7 +15,7 @@
   --secundary-color: #165991;
   --price-tag-color: #333333;
   --fx-price-color: #66FF66;
-  --text-color: #333333;
+  --text-color: #E9E9E9;
   --fx-bg-color: #0095D1;
   --fx-bd-color: #165991;
   --fx-ft-color: #E9E9E9;
@@ -29,7 +29,7 @@
   --fx-bd-weight: 2px;
   --fx-bd-style: solid;
   --fx-title-height: 40px;
-  --fx-title-width: 127px;
+  --fx-title-width: 162px;
   --fx-title-bd-weight: 2px;
   --fx-title-bd-style: solid;
   --grid-cols: 5;
@@ -62,7 +62,12 @@ main {
   width: 210mm;
   height: 297mm;
   background-color: white;
+}
+main:not(:last-child) {
   margin: 0 auto 10mm;
+}
+main:last-child {
+  margin: 0 auto;
 }
 
 .flyerMain {
