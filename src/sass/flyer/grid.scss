@@ -1,6 +1,7 @@
 .flyerList {
-    padding: 1.5rem 10px;
-    width:   calc(100%);
+    padding:    1.5rem 10px;
+    width:      calc(100%);
+    font-size:  8pt;
 
     .row {
         display:     grid;
@@ -9,9 +10,9 @@
         grid-template-columns: repeat(var(--grid-cols), calc(100% / var(--grid-cols)));
 
         div {
-            display: grid;
-            grid-template-columns: 40% calc(50% - 5px);
+            display:         grid;
             grid-column-gap: 5px;
+            grid-template-columns: 40% calc(50% - 5px);
     
             div {
                 display: block;
@@ -53,8 +54,13 @@
     p {
         font-family:    var(--product-font);
         font-weight:    bold;
-        font-size:      8pt;
+        font-size:      1em;
         text-transform: capitalize;
+
+        &.obs {
+            font-weight: normal;
+            font-size: .8em;
+        }
     }
     
     .price {

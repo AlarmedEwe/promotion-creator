@@ -131,6 +131,7 @@ main:last-child {
 .flyerList {
   padding: 1.5rem 10px;
   width: calc(100%);
+  font-size: 8pt;
 }
 .flyerList .row {
   display: grid;
@@ -140,8 +141,8 @@ main:last-child {
 }
 .flyerList .row div {
   display: grid;
-  grid-template-columns: 40% calc(50% - 5px);
   grid-column-gap: 5px;
+  grid-template-columns: 40% calc(50% - 5px);
 }
 .flyerList .row div div {
   display: block;
@@ -176,8 +177,12 @@ main:last-child {
 .flyerList p {
   font-family: var(--product-font);
   font-weight: bold;
-  font-size: 8pt;
+  font-size: 1em;
   text-transform: capitalize;
+}
+.flyerList p.obs {
+  font-weight: normal;
+  font-size: 0.8em;
 }
 .flyerList .price {
   font-size: 13pt;
