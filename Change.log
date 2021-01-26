@@ -38,3 +38,16 @@
         3 Refatoring grid layout
         4 Bug fixed: clear page b4 write
         6 Fixed prices insert handle
+0.2.1 New fixed prices layout
+        0 Some changes to grid layout
+        1 Fixed prices v1
+        2 Upgrading app frame
+        3 Refatoring grid
+        4 Customizable fixed rows v1
+        5 Customizable fixed rows v2
+        6 Customizable fixed rows v3 JS
+        7 Finally, saving to HTML
+0.2.2 Last features?
+        0 Fixing printing bugs
+        1 Loading like a promise
+        2 Footer date now is working

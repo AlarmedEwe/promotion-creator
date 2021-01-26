@@ -1,11 +1,15 @@
 let FileHandle  = require('./fileHandle'),
-    XlsxHandle  = require('./XlsxHandle'),
+    DateHandle  = require('./dateHandle'),
+    XlsxHandle  = require('./xlsxHandle'),
     excelToJson = require('convert-excel-to-json');
 
 function onChanges()
 {
     let fileHandle = new FileHandle(),
+        dateHandle = new DateHandle(),
         flyer      = new XlsxHandle();
+
+    dateHandle.writeFooter(dtIni.value, dtFin.value);
 
     // Buttons
     printBtn.onclick = function()
@@ -19,13 +23,21 @@ function onChanges()
 
 
     // Arquivos
-    title.onchange = function ()
+    title.onchange = function()
     {
         flyer.changeTitle(this.value);
     }
+    dtIni.onchange = function()
+    {
+        dateHandle.writeFooter(dtIni.value, dtFin.value);
+    }
+    dtFin.onchange = function()
+    {
+        dateHandle.writeFooter(dtIni.value, dtFin.value);
+    }
 
     // Dados
-    xlsFile.onchange = function ()
+    xlsFile.onchange = function()
     {
         fileHandle.handleFileName(this);
 

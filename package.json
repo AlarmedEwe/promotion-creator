@@ -1,6 +1,6 @@
 {
   "name": "promotion-creator",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "description": "This project is to solve a need for the company Distribuidora Gramense, to automatically generate the promotions flyers.",
   "main": "main.js",
   "scripts": {
