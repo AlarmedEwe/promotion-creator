@@ -27,6 +27,14 @@ function onChanges()
     {
         flyer.changeTitle(this.value);
     }
+    titleFtFamily.onchange = function ()
+    {
+        flyer.setValue('title-ft-family', this.value);
+    }
+    titleFtSize.onchange = function()
+    {
+        flyer.setValue('title-ft-size', this.value);
+    }
     dtIni.onchange = function()
     {
         dateHandle.writeFooter(dtIni.value, dtFin.value);
@@ -143,13 +151,20 @@ function onChanges()
     {
         flyer.setValue('price-tag-font', this.value);
     }
+    priceFtSize.onchange = function()
+    {
+        flyer.setValue('price-ft-size', this.value);
+    }
     priceTagColor.onchange = function()
     {
         flyer.setValue('price-tag-color', this.value);
     }
     priceTagImg.onchange = function()
     {
-        // price-tag-img
+        fileHandle.handleFileName(this);
+        flyer.convertImgToBloob(this.files[0].path, url => {
+            flyer.setValue('price-tag-img', `url('${url}')`);
+        });
     }
 
     // Preços fixos
@@ -185,7 +200,10 @@ function onChanges()
         }
         fxPriceBg.onchange = function()
         {
-            flyer.setValue('fx-price-bg', this.value);
+            fileHandle.handleFileName(this);
+            flyer.convertImgToBloob(this.files[0].path, url => {
+                flyer.setValue('fx-price-img', `url('${url}')`);
+            });
         }
         // Titulo
         fxTitleBgColor.onchange = function()

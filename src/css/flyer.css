@@ -7,14 +7,15 @@
 }
 
 :root {
+  --title-ft-family: Arial;
+  --title-ft-size: 26pt;
   --product-font: Arial;
-  --price-tag-font: Arial;
   --fx-title-ft-family: Arial;
   --fx-title-ft-size: 18pt;
   --primary-color: #0095D1;
   --secundary-color: #165991;
   --price-tag-color: #333333;
-  --fx-price-color: #66FF66;
+  --fx-price-color: #FF6A2E;
   --text-color: #E9E9E9;
   --fx-bg-color: #0095D1;
   --fx-bd-color: #165991;
@@ -26,6 +27,10 @@
   --header-border-style: solid;
   --footer-border-weight: 0px;
   --footer-border-style: solid;
+  --price-tag-img: none;
+  --price-tag-font: Arial;
+  --price-ft-size: 10pt;
+  --fx-price-img: none;
   --fx-bd-weight: 2px;
   --fx-bd-style: solid;
   --fx-title-height: 40px;
@@ -107,8 +112,12 @@ main:last-child {
 .flyerHeader#flyerHeader {
   height: 100px;
 }
+.flyerHeader h1, .flyerHeader h2 {
+  font-family: var(--title-ft-family);
+}
 .flyerHeader h1 {
   max-width: 50%;
+  font-size: var(--title-ft-size);
 }
 .flyerHeader h2 {
   text-align: right;
@@ -136,12 +145,14 @@ main:last-child {
 .flyerList .row {
   display: grid;
   height: calc((297mm - 150px) / var(--grid-rows));
-  align-items: center;
+  align-items: flex-end;
+  padding-bottom: 40px;
   grid-template-columns: repeat(var(--grid-cols), calc(100% / var(--grid-cols)));
 }
 .flyerList .row div {
   display: grid;
   grid-column-gap: 5px;
+  align-items: flex-end;
   grid-template-columns: 40% calc(50% - 5px);
 }
 .flyerList .row div div {
@@ -149,7 +160,7 @@ main:last-child {
 }
 .flyerList .fixed {
   position: relative;
-  padding: 20px 10px 10px;
+  padding: 20px 10px 50px;
   border: var(--fx-bd-weight) var(--fx-bd-style) var(--fx-bd-color);
   color: var(--fx-ft-color);
   background-color: var(--fx-bg-color);
@@ -169,6 +180,7 @@ main:last-child {
 }
 .flyerList .fixed .price {
   color: var(--fx-price-color);
+  background-image: var(--fx-price-img);
 }
 .flyerList img {
   max-width: 100%;
@@ -185,11 +197,13 @@ main:last-child {
   font-size: 0.8em;
 }
 .flyerList .price {
-  font-size: 13pt;
+  font-size: var(--price-ft-size);
   font-weight: bold;
   color: var(--price-tag-color);
   font-family: var(--price-tag-font);
-  background-attachment: fixed;
+  margin: 2px 0;
+  padding: 2px;
+  background-image: var(--price-tag-img);
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

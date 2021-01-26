@@ -4,14 +4,16 @@
     font-size:  8pt;
 
     .row {
-        display:     grid;
-        height:      calc((297mm - 150px) / var(--grid-rows));
-        align-items: center;
+        display:        grid;
+        height:         calc((297mm - 150px) / var(--grid-rows));
+        align-items:    flex-end;
+        padding-bottom: 40px;
         grid-template-columns: repeat(var(--grid-cols), calc(100% / var(--grid-cols)));
 
         div {
             display:         grid;
             grid-column-gap: 5px;
+            align-items:     flex-end;
             grid-template-columns: 40% calc(50% - 5px);
     
             div {
@@ -22,7 +24,7 @@
     
     .fixed {
         position:   relative;
-        padding:    20px 10px 10px;
+        padding:    20px 10px 50px;
         border:     var(--fx-bd-weight) var(--fx-bd-style) var(--fx-bd-color);
         color:      var(--fx-ft-color);
         background-color: var(--fx-bg-color);
@@ -43,6 +45,7 @@
 
         .price {
             color: var(--fx-price-color);
+            background-image: var(--fx-price-img);
         }
     }
 
@@ -64,12 +67,15 @@
     }
     
     .price {
-        font-size:      13pt;
+        font-size:      var(--price-ft-size);
         font-weight:    bold;
         color:          var(--price-tag-color);
         font-family:    var(--price-tag-font);
+        margin:         2px 0;
+        padding:        2px;
     
-        background-attachment:  fixed;
+        background-image: var(--price-tag-img);
+        // background-attachment:  fixed;
         background-position:    center;
         background-repeat:      no-repeat;
         background-size:        cover;

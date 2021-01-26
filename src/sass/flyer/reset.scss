@@ -7,8 +7,9 @@
 
 :root {
     // Fonts
+    --title-ft-family:      Arial;
+    --title-ft-size:        26pt;
     --product-font:         Arial;
-    --price-tag-font:       Arial;
     --fx-title-ft-family:   Arial;
     --fx-title-ft-size:     18pt;
 
@@ -16,7 +17,7 @@
     --primary-color:    #0095D1;
     --secundary-color:  #165991;
     --price-tag-color:  #333333;
-    --fx-price-color:   #66FF66;
+    --fx-price-color:   #FF6A2E;
     --text-color:       #E9E9E9;
     --fx-bg-color:      #0095D1;
     --fx-bd-color:      #165991;
@@ -30,6 +31,12 @@
     --header-border-style:  solid;
     --footer-border-weight: 0px;
     --footer-border-style:  solid;
+
+    // Prices
+    --price-tag-img:    none;
+    --price-tag-font:   Arial;
+    --price-ft-size:    10pt;
+    --fx-price-img:     none;
 
     // Fixed prices
     --fx-bd-weight:         2px;
