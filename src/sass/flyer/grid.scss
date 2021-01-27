@@ -57,5 +57,13 @@
         background-position:    center;
         background-repeat:      no-repeat;
         background-size:        cover;
+
+        &::after {
+            content: 'unid.';
+            display: block;
+            text-align: right;
+            padding-right: 10pt;
+            font-size: 6pt;
+        }
     }
 }

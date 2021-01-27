@@ -210,5 +210,12 @@ main:last-child {
   background-repeat: no-repeat;
   background-size: cover;
 }
+.flyerList .price::after {
+  content: "unid.";
+  display: block;
+  text-align: right;
+  padding-right: 10pt;
+  font-size: 6pt;
+}
 
 /*# sourceMappingURL=flyer.css.map */
