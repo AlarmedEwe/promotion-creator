@@ -7,7 +7,7 @@ function onChanges()
 {
     let fileHandle = new FileHandle(),
         dateHandle = new DateHandle(),
-        flyer      = new XlsxHandle();
+        flyer      = new FlyerHandler();
 
     dateHandle.writeFooter(dtIni.value, dtFin.value);
 
@@ -58,7 +58,7 @@ function onChanges()
                 sourceFile: xlsFixed.files[0].path
             }) : {};
 
-        flyer.createFlyer(
+        flyer.createFlyerGrid(
             normalPrices[Object.keys(normalPrices)[0]],
             fixedPrices[Object.keys(fixedPrices)[0]]
         );
@@ -76,12 +76,12 @@ function onChanges()
             });
         
         if (xlsFile.files.length != 0)
-            flyer.createFlyer(
+            flyer.createFlyerGrid(
                 normalPrices[Object.keys(normalPrices)[0]],
                 fixedPrices[Object.keys(fixedPrices)[0]]
             );
         else
-            flyer.createFlyer(
+            flyer.createFlyerGrid(
                 fixedPrices[Object.keys(fixedPrices)[0]]
             );
     }

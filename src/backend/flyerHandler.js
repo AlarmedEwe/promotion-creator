@@ -81,58 +81,59 @@ class FlyerHandler
         return main;
     }
 
-    createFlyer(promoPrices, fixedPrices = [], numRows = 6, numCols = 5)
+    createFlyerGrid(promoPrices, fixedPrices = [], numRows = 6, numCols = 5)
     {
         let flyerList = this.flyerContent.getElementById('flyerList'),
             hasFixeds = (fixedPrices.length != 0);
-        
+     
+        // Removes header from xls tables
         promoPrices.shift();
         if(hasFixeds) fixedPrices.shift();
 
-        let itemCounter, colCounter, rowCounter, promoCounter, fixedCounter;
-        itemCounter = colCounter = rowCounter = promoCounter = fixedCounter = 0;
-        colCounter++;
+        // Initialize counters
+        let colCounter, rowCounter, promoCounter, fixedCounter;
+        rowCounter = promoCounter = fixedCounter = 0;
+        colCounter = 1;
         
         for (let i = 0; i < (promoPrices.length + fixedPrices.length); i++)
         {
+            // Create a new row or get the last one
             let row = (colCounter == 1)
                 ? document.createElement('div')
                 : flyerList.querySelector('.row:last-child');
 
+            // Separate fixed prices from normal prices
             if (hasFixeds && rowCounter == 2 && fixedCounter < fixedPrices.length)
             {
                 if (colCounter == 1) row.classList.add('fixed');
                 
                 row.appendChild(this.createProductExhibition(fixedPrices[fixedCounter]));
-                fixedCounter++;
+
+                if(++fixedCounter == fixedPrices.length)
+                    colCounter = 0;
             } else {
                 row.appendChild(this.createProductExhibition(promoPrices[promoCounter]));
                 promoCounter++;
             }
 
-            if(i >= numRows * numCols - 1)
+            // Creates new page
+            if(rowCounter == numRows && colCounter == 1)
             {
-                let main = (i % 30 == 0)
-                    ? this.createPage()
-                    : this.flyerContent.querySelector('main:last-child');
-
+                let main = this.createPage();
                 flyerList = main.querySelector('.flyerList');
             }
 
-            if (colCounter == 1)
+            // Append row to page
+            if (colCounter == 1 || colCounter == 0)
             {
                 row.classList.add('row');
                 flyerList.appendChild(row);
             }
 
-            colCounter = (colCounter < numCols)
-                ? colCounter + 1
-                : 1;
-
-            if (colCounter == numCols)
-                rowCounter = (rowCounter < numRows)
-                    ? rowCounter + 1
-                    : 1;
+            // Increment counters
+            colCounter = (colCounter < numCols) ? colCounter + 1 : 1;
+            if (colCounter == 1)
+                rowCounter = (rowCounter < numRows) ? rowCounter + 1 : 1;
         }
     }
 
@@ -160,4 +161,4 @@ class FlyerHandler
     }
 }
 
-module.exports = XlsxHandle;
+module.exports = FlyerHandler;
