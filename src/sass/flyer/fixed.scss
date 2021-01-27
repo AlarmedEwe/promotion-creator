@@ -1,0 +1,26 @@
+.fixed {
+    position:   relative;
+    padding:    20px 10px 40px;
+    border:     var(--fx-bd-weight) var(--fx-bd-style) var(--fx-bd-color);
+    color:      var(--fx-ft-color);
+    background-color: var(--fx-bg-color);
+
+    &::before {
+        content: 'Preços Fixos';
+        position:   absolute;
+        top:        calc(var(--fx-title-height) / -2);
+        left:       calc(50% - (var(--fx-title-width) - 20px) / 2);
+        padding:    5px 10px;
+        text-align: center;
+        border:     var(--fx-title-bd-weight) var(--fx-title-bd-style) var(--fx-title-bd-color);
+        color:      var(--fx-title-ft-color);
+        font-size:  var(--fx-title-ft-size);
+        font-family:var(--fx-title-ft-family);
+        background-color: var(--fx-title-bg-color);
+    }
+
+    .price {
+        color: var(--fx-price-color);
+        background-image: var(--fx-price-img);
+    }
+}

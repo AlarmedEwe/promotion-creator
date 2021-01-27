@@ -155,7 +155,6 @@ class FlyerHandler
         result = result.replace('css/flyer', __dirname.replaceAll('\\','/') + '/../css/flyer');
 
        fs.writeFile('docs/out.html', result, res => {
-           alert('Salvo com sucesso');
            shell.openExternal(__dirname + '\\..\\..\\docs\\out.html');
        });
     }
