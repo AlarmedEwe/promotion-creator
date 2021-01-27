@@ -1,6 +1,6 @@
 let FileHandle  = require('./fileHandle'),
     DateHandle  = require('./dateHandle'),
-    XlsxHandle  = require('./xlsxHandle'),
+    FlyerHandler  = require('./flyerHandler'),
     excelToJson = require('convert-excel-to-json');
 
 function onChanges()

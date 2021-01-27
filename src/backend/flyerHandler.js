@@ -1,7 +1,7 @@
 const   fs = require('fs'),
         {shell} = require('electron');
 
-class XlsxHandle
+class FlyerHandler
 {
     flyerContent;
 
