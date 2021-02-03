@@ -29,14 +29,20 @@ class FlyerHandler
     {
         let div = document.createElement('div');
 
-        let description = (product.C) ?
-            `<p>${product.B.toLowerCase()} ${product.C}</p>`
-            : `<p>${product.B.toLowerCase()}</p>`;
-        if (product.D != null) description += `<p class="obs">${product.D}</p>`;
-        description += `<div class="price">R$ ${product.E.toFixed(2).replace('.',',')}</div>`;
-        if (product.F != null) description += `<div class="price">R$ ${product.F.toFixed(2).replace('.',',')}</div>`;
+        let cod     = product.A,
+            desc    = product.B,
+            notes   = product.E,
+            price1  = product.F,
+            price2  = product.G;
+
+        let description = `<p>${desc.toLowerCase()}</p>`;
+        if (notes != null)
+            description += `<p class="obs">${notes}</p>`;
+        description += `<div class="price">R$ ${price1.toFixed(2).replace('.',',')}</div>`;
+        if (price2 != null)
+            description += `<div class="price">R$ ${notes.toFixed(2).replace('.',',')}</div>`;
         
-        div.innerHTML = `<img src="P:/IMG_PROD/PNG/${product.A}.png" alt="${product.A}" onerror="this.src = 'P:/IMG_PROD/${product.A}.jpg';" />
+        div.innerHTML = `<img src="P:/IMG_PROD/PNG/${cod}.png" alt="${cod}" onerror="this.src = 'P:/IMG_PROD/${cod}.jpg';" />
             <div>${description}</div>`;
 
         return div;
