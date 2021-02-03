@@ -197,6 +197,7 @@ main:last-child {
 .flyerList p.obs {
   font-weight: normal;
   font-size: 0.8em;
+  text-transform: none;
 }
 .flyerList .price {
   font-size: var(--price-ft-size);

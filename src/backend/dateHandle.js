@@ -47,8 +47,9 @@ class DateHandle
         }
 
         setTimeout(() => {
-            flyer.contentDocument.querySelector('#flyerFooter p').innerHTML =
-                `VALIDADE ${dateMsg} OU ENQUANTO DURAR O ESTOQUE.`;
+            flyer.contentDocument.querySelectorAll('.flyerFooter p').forEach(footer => {
+                footer.innerHTML = `VALIDADE ${dateMsg} OU ENQUANTO DURAR O ESTOQUE.`;
+            });
         }, 1500);
     }
 }
