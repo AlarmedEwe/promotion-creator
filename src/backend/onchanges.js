@@ -12,6 +12,31 @@ function onChanges()
     dateHandle.writeFooter(dtIni.value, dtFin.value);
 
     // Buttons
+    refreshBtn.onclick = function()
+    {
+        flyer.clearPage();
+
+        let normalPrices = (xlsFile.files.length != 0) ? excelToJson({
+                sourceFile: xlsFile.files[0].path
+            }) : {},
+            fixedPrices  = (xlsFixed.files.length != 0) ? excelToJson({
+                sourceFile: xlsFixed.files[0].path
+            }) : {};
+        
+        if (xlsFile.files.length != 0 && xlsFixed.files.length != 0)
+            flyer.createFlyerGrid(
+                normalPrices[Object.keys(normalPrices)[0]],
+                fixedPrices[Object.keys(fixedPrices)[0]]
+            );
+        else if (xlsFixed.files.length != 0)
+            flyer.createFlyerGrid(
+                fixedPrices[Object.keys(fixedPrices)[0]]
+            );
+        else
+            flyer.createFlyerGrid(
+                normalPrices[Object.keys(normalPrices)[0]]
+            );
+    }
     printBtn.onclick = function()
     {
         flyer.printPage();
@@ -48,7 +73,6 @@ function onChanges()
     xlsFile.onchange = function()
     {
         fileHandle.handleFileName(this);
-
         flyer.clearPage();
         
         let normalPrices = excelToJson({
