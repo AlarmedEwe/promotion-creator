@@ -162,7 +162,7 @@ main:last-child {
 }
 .flyerList .fixed {
   position: relative;
-  padding: 20px 10px 40px;
+  padding: 20px 10px 20px;
   border: var(--fx-bd-weight) var(--fx-bd-style) var(--fx-bd-color);
   color: var(--fx-ft-color);
   background-color: var(--fx-bg-color);

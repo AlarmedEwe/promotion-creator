@@ -36,11 +36,11 @@ class FlyerHandler
             price2  = product.G;
 
         let description = `<p>${desc.toLowerCase()}</p>`;
-        if (notes != null)
+        if (notes != null || notes != undefined)
             description += `<p class="obs">${notes}</p>`;
         description += `<div class="price">R$ ${price1.toFixed(2).replace('.',',')}</div>`;
-        if (price2 != null)
-            description += `<div class="price">R$ ${notes.toFixed(2).replace('.',',')}</div>`;
+        if (price2 != null || price2 != undefined)
+            description += `<div class="price">R$ ${price2.toFixed(2).replace('.',',')}</div>`;
         
         div.innerHTML = `<img src="P:/IMG_PROD/PNG/${cod}.png" alt="${cod}" onerror="this.src = 'P:/IMG_PROD/${cod}.jpg';" />
             <div>${description}</div>`;
